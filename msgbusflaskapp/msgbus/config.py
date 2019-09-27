@@ -1,4 +1,4 @@
-UPLOAD_FOLDER = 'D:/uploads'
+UPLOAD_FOLDER = 'E:/info/MsgBus-Viewer/msgbusflaskapp/uploads'
 SECRET_KEY = "mihnea"
 UPLOAD_FOLDER = UPLOAD_FOLDER
 FILENAME = ""
