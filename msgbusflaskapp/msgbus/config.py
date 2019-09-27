@@ -1,0 +1,6 @@
+UPLOAD_FOLDER = 'D:/uploads'
+SECRET_KEY = "mihnea"
+UPLOAD_FOLDER = UPLOAD_FOLDER
+FILENAME = ""
+PID_INFO = ""
+FIELDS = []

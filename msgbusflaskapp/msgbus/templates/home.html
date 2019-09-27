@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{%block content %}
+<main role="main" class="container">
+    <div class="content-section">
+        <form method="POST" action="" enctype="multipart/form-data">
+            {{form.hidden_tag()}}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">
+                    Load your file:
+                </legend>
+                <div id="file" class="h4">Your file is: {{file}}</div>
+                <div class="form-group">
+                    {{form.file.label(class = "form-control-label")}}
+                    {{form.file(class = "form-control-file",accept=".log")}}
+                    <small id="fileHelp" class="form-text text-muted">This is your file.</small>
+                </div>
+
+            </fieldset>
+            {{form.changeFile(class="btn btn-info",id="ChangeFile")}}
+
+        </form>
+        <div class="row top-buffer">
+            <div class="col-md-12">
+                <button type="submit" class="btn btn-primary" id="btnGet">Show the pids</button>
+                <button type="submit" class="btn btn-primary" id="btnRefresh">Hide the pids</button>
+            </div>
+        </div>
+
+        <div id="pids">
+
+        </div>
+
+        <script type="text/javascript">
+
+        </script>
+        <script type="text/javascript">
+            $('button#btnRefresh').click(function () {
+                $.ajax({
+                    url: "http://127.0.0.1:5001/clear_pids",
+                    type: "POST",
+                    success: function (resp) {
+                        $('div#pids').empty();
+                    }
+                });
+            });
+        </script>
+    </div>
+</main>
+{%endblock content%}

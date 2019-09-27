@@ -1,0 +1,22 @@
+
+body {
+  background: #fafafa;
+  color: #333333;
+
+}
+
+
+
+.content-section {
+  background: #ffffff;
+  padding: 10px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.top-buffer { margin-top:20px; }
+.card .card-body .card-title{
+  color: #17a2b8;
+  font-weight: bold;
+}

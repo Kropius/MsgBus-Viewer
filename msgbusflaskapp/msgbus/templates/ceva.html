@@ -1,0 +1,31 @@
+{% if myList %}
+    {% for elem in myList | batch(3,'&nbsp;') %}
+        <div class="row top-buffer">
+            {%  for elem_item in elem %}
+            <div class ="col-md-4">
+                <div class ="panel panel-primary">
+                <div class = "panel-heading">
+                    <div class ="h5">PID: {{elem_item['pid']}}</div>
+
+                </div>
+                <div class="panel-body">
+                    <div class = "h5">{{elem_item['file_path']}}</div>
+                    <form action = "{{url_for('view_pid',variable=elem_item['pid'])}}">
+                    <button type="submit" class = "btn btn-success" >Get more info</button>
+                    </form>
+                </div>
+                </div>
+
+            </div>
+            {% endfor %}
+           </div>
+    {% endfor %}
+
+
+{% else %}
+
+
+    <div class = "row top-buffer">
+    <div class = "alert alert-danger">Choose a file!</div>
+    </div>
+{% endif %}
